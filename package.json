@@ -1,6 +1,6 @@
 {
   "name": "tagless-ember-components-codemod",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Converts regular Ember.js components to `tagName: ''` components",
   "homepage": "https://github.com/simplabs/tagless-ember-components-codemod",
   "repository": "git@github.com:simplabs/tagless-ember-components-codemod.git",
