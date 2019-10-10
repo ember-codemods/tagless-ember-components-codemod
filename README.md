@@ -3,6 +3,9 @@ tagless-ember-components-codemod
 
 Converts regular Ember.js components to `tagName: ''` components
 
+**This codemod is experimental and might break your app. Make sure to
+review the changes that it creates!**
+
 
 Usage
 ------------------------------------------------------------------------------
@@ -45,6 +48,15 @@ export default Component.extend({
   {{@text}}
 </button>
 ```
+
+
+Known Caveats
+------------------------------------------------------------------------------
+
+- Due to the way `jscodeshift` works it sometimes removes empty lines between
+  component properties, or adds new ones unexpectedly
+
+- [Open Issues](https://github.com/ember-codemods/tagless-ember-components-codemod/issues)
 
 
 License
