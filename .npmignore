@@ -1,5 +1,6 @@
 .editorconfig
 .eslintrc.js
+.github/
 .prettierrc.js
 .idea/
 **/__tests__/
