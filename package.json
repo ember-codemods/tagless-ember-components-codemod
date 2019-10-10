@@ -1,0 +1,33 @@
+{
+  "name": "tagless-ember-components-codemod",
+  "version": "0.0.0",
+  "description": "Converts regular Ember.js components to `tagName: ''` components",
+  "homepage": "https://github.com/simplabs/tagless-ember-components-codemod",
+  "repository": "git@github.com:simplabs/tagless-ember-components-codemod.git",
+  "license": "MIT",
+  "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
+  "bin": {
+    "tagless-ember-components-codemod": "bin/cli.js"
+  },
+  "scripts": {
+    "changelog": "lerna-changelog",
+    "lint": "eslint . --cache"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "globby": "^10.0.1",
+    "pkg-dir": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "lerna-changelog": "^0.8.2",
+    "prettier": "1.18.2"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  }
+}
