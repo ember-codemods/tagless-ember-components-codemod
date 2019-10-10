@@ -11,7 +11,8 @@
   },
   "scripts": {
     "changelog": "lerna-changelog",
-    "lint": "eslint . --cache"
+    "lint": "eslint . --cache",
+    "test": "jest"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -26,6 +27,7 @@
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.9.0",
     "lerna-changelog": "^0.8.2",
     "prettier": "1.18.2"
   },
