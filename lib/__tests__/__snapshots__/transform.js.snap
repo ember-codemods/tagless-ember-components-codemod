@@ -17,7 +17,9 @@ foo
     });
   
 ~~~~~~~~~~
-<div ...attributes>foo</div>
+<div ...attributes>
+  foo
+</div>
 =========="
 `;
 
@@ -39,7 +41,9 @@ foo
     });
   
 ~~~~~~~~~~
-<div foo={{this.foo}} bar={{this.baz}} ...attributes>foo</div>
+<div foo={{this.foo}} bar={{this.baz}} ...attributes>
+  foo
+</div>
 =========="
 `;
 
@@ -61,7 +65,9 @@ foo
     });
   
 ~~~~~~~~~~
-<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>foo</div>
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+  foo
+</div>
 =========="
 `;
 
@@ -83,7 +89,9 @@ foo
     });
   
 ~~~~~~~~~~
-<div class=\\"foo bar:baz\\" ...attributes>foo</div>
+<div class=\\"foo bar:baz\\" ...attributes>
+  foo
+</div>
 =========="
 `;
 
@@ -105,7 +113,9 @@ foo
     });
   
 ~~~~~~~~~~
-<div id=\\"qux\\" ...attributes>foo</div>
+<div id=\\"qux\\" ...attributes>
+  foo
+</div>
 =========="
 `;
 
@@ -127,7 +137,35 @@ foo
     });
   
 ~~~~~~~~~~
-<div class=\\"foo\\" ...attributes>foo</div>
+<div class=\\"foo\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`multi-line template 1`] = `
+"==========
+export default Component.extend({});
+~~~~~~~~~~
+{{#if this.foo}}
+  FOO
+{{else}}
+  BAR
+{{/if}}
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+export default Component.extend({
+  tagName: \\"\\"
+});
+~~~~~~~~~~
+<div ...attributes>
+  {{#if this.foo}}
+    FOO
+  {{else}}
+    BAR
+  {{/if}}
+</div>
 =========="
 `;
 
@@ -149,6 +187,8 @@ foo
     });
   
 ~~~~~~~~~~
-<span ...attributes>foo</span>
+<span ...attributes>
+  foo
+</span>
 =========="
 `;
