@@ -2,8 +2,8 @@
   "name": "tagless-ember-components-codemod",
   "version": "0.1.0",
   "description": "Converts regular Ember.js components to `tagName: ''` components",
-  "homepage": "https://github.com/simplabs/tagless-ember-components-codemod",
-  "repository": "git@github.com:simplabs/tagless-ember-components-codemod.git",
+  "homepage": "https://github.com/ember-codemods/tagless-ember-components-codemod",
+  "repository": "git@github.com:ember-codemods/tagless-ember-components-codemod.git",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "bin": {
