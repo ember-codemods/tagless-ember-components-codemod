@@ -119,6 +119,30 @@ foo
 =========="
 `;
 
+exports[`handles \`hasComponentCSS\` option correctly 1`] = `
+"==========
+
+    export default Component.extend({
+      classNames: ['foo', 'bar:baz'],
+    });
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    export default Component.extend({
+      tagName: \\"\\",
+    });
+  
+~~~~~~~~~~
+<div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`handles single \`classNames\` item correctly 1`] = `
 "==========
 
