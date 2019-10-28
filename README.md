@@ -56,6 +56,9 @@ Known Caveats
 - Due to the way `jscodeshift` works it sometimes removes empty lines between
   component properties, or adds new ones unexpectedly
 
+- Since `click()` and other event hooks don't work for tagless components,
+  passing in something like `@click=(action ...)` also will not work anymore
+
 - [Open Issues](https://github.com/ember-codemods/tagless-ember-components-codemod/issues)
 
 
