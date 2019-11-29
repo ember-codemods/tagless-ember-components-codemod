@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.2 (2019-11-29)
+
+#### :bug: Bug Fix
+* [#28](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/28) Fix attributeBindings issue ([@vladucu](https://github.com/vladucu))
+
+#### :house: Internal
+* [#21](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/21) Add dependabot configuration file ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- vladucu ([@vladucu](https://github.com/vladucu))
+
+
 ## v0.3.1 (2019-11-29)
 
 #### :rocket: Enhancement
