@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.1 (2019-11-29)
+
+#### :rocket: Enhancement
+* [#19](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/19) Add support for running on addons ([@vladucu](https://github.com/vladucu))
+
+#### :house: Internal
+* [#20](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/20) CI: Add "Release" workflow ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- vladucu ([@vladucu](https://github.com/vladucu))
+
+
 ## v0.3.0 (2019-10-28)
 
 #### :rocket: Enhancement
