@@ -41,7 +41,7 @@ foo
     });
   
 ~~~~~~~~~~
-<div foo={{this.foo}} bar={{this.baz}} ...attributes>
+<div foo={{this.foo}} baz={{this.bar}} ...attributes>
   foo
 </div>
 =========="
