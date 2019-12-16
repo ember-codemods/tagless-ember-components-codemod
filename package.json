@@ -19,7 +19,7 @@
     "debug": "^4.1.1",
     "ember-template-recast": "^3.3.0",
     "globby": "^10.0.1",
-    "jscodeshift": "^0.6.4",
+    "jscodeshift": "^0.7.0",
     "pkg-dir": "^4.2.0"
   },
   "devDependencies": {
