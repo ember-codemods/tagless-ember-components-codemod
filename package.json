@@ -18,7 +18,7 @@
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
     "ember-template-recast": "^3.3.2",
-    "globby": "^10.0.1",
+    "globby": "^10.0.2",
     "jscodeshift": "^0.7.0",
     "pkg-dir": "^4.2.0"
   },
