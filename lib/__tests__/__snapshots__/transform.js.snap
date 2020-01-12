@@ -293,6 +293,62 @@ foo
 =========="
 `;
 
+exports[`native components handles \`classNameBindings\` correctly 1`] = `
+"==========
+
+      import { classNameBindings } from '@ember-decorators/component';
+
+      @classNameBindings('a:b', 'x:y:z', 'foo::bar')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`classNames\` correctly 1`] = `
+"==========
+
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo', 'bar:baz')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components handles \`elementId\` correctly 1`] = `
 "==========
 
@@ -312,6 +368,34 @@ foo
 
 ~~~~~~~~~~
 <div id=\\"qux\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles single \`classNames\` item correctly 1`] = `
+"==========
+
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo\\" ...attributes>
   foo
 </div>
 =========="
