@@ -293,7 +293,7 @@ foo
 =========="
 `;
 
-exports[`native components handles \`classNameBindings\` correctly 1`] = `
+exports[`native components handles \`@classNameBindings\` correctly 1`] = `
 "==========
 
       import { classNameBindings } from '@ember-decorators/component';
@@ -321,7 +321,7 @@ foo
 =========="
 `;
 
-exports[`native components handles \`classNames\` correctly 1`] = `
+exports[`native components handles \`@classNames\` correctly 1`] = `
 "==========
 
       import { classNames } from '@ember-decorators/component';
@@ -373,7 +373,35 @@ foo
 =========="
 `;
 
-exports[`native components handles single \`classNames\` item correctly 1`] = `
+exports[`native components handles \`hasComponentCSS\` option correctly 1`] = `
+"==========
+
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo', 'bar:baz')
+      export default class extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles single \`@classNames\` item correctly 1`] = `
 "==========
 
       import { classNames } from '@ember-decorators/component';
@@ -397,6 +425,32 @@ foo
 ~~~~~~~~~~
 <div class=\\"foo\\" ...attributes>
   foo
+</div>
+=========="
+`;
+
+exports[`native components multi-line template 1`] = `
+"==========
+export default class extends Component {};
+~~~~~~~~~~
+{{#if this.foo}}
+  FOO
+{{else}}
+  BAR
+{{/if}}
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+import { tagName } from \\"@ember-decorators/component\\";
+@tagName(\\"\\")
+export default class extends Component {}
+~~~~~~~~~~
+<div ...attributes>
+  {{#if this.foo}}
+    FOO
+  {{else}}
+    BAR
+  {{/if}}
 </div>
 =========="
 `;
