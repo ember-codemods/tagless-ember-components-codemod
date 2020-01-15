@@ -5,7 +5,7 @@ exports[`classic components basic 1`] = `
 
     export default Component.extend({
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -15,7 +15,7 @@ foo
     export default Component.extend({
         tagName: \\"\\"
     });
-
+  
 ~~~~~~~~~~
 <div ...attributes>
   foo
@@ -23,13 +23,13 @@ foo
 =========="
 `;
 
-exports[`handles \`ariaRole\` correctly 1`] = `
+exports[`classic components handles \`ariaRole\` correctly 1`] = `
 "==========
 
     export default Component.extend({
       ariaRole: 'button',
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -39,7 +39,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div role=\\"button\\" ...attributes>
   foo
@@ -47,13 +47,13 @@ foo
 =========="
 `;
 
-exports[`handles \`attributeBindings\` correctly 1`] = `
+exports[`classic components handles \`attributeBindings\` correctly 1`] = `
 "==========
 
     export default Component.extend({
       attributeBindings: ['foo', 'bar:baz'],
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -63,7 +63,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div foo={{this.foo}} baz={{this.bar}} ...attributes>
   foo
@@ -77,7 +77,7 @@ exports[`classic components handles \`classNameBindings\` correctly 1`] = `
     export default Component.extend({
       classNameBindings: ['a:b', 'x:y:z', 'foo::bar'],
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -87,7 +87,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
   foo
@@ -101,7 +101,7 @@ exports[`classic components handles \`classNames\` correctly 1`] = `
     export default Component.extend({
       classNames: ['foo', 'bar:baz'],
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -111,7 +111,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div class=\\"foo bar:baz\\" ...attributes>
   foo
@@ -125,7 +125,7 @@ exports[`classic components handles \`elementId\` correctly 1`] = `
     export default Component.extend({
       elementId: 'qux',
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -135,7 +135,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div id=\\"qux\\" ...attributes>
   foo
@@ -149,7 +149,7 @@ exports[`classic components handles \`hasComponentCSS\` option correctly 1`] = `
     export default Component.extend({
       classNames: ['foo', 'bar:baz'],
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -159,7 +159,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
   foo
@@ -173,7 +173,7 @@ exports[`classic components handles single \`classNames\` item correctly 1`] = `
     export default Component.extend({
       classNames: ['foo'],
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -183,7 +183,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <div class=\\"foo\\" ...attributes>
   foo
@@ -223,7 +223,7 @@ exports[`classic components replaces existing \`tagName\` 1`] = `
     export default Component.extend({
       tagName: 'span',
     });
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -233,7 +233,7 @@ foo
     export default Component.extend({
       tagName: \\"\\",
     });
-
+  
 ~~~~~~~~~~
 <span ...attributes>
   foo
@@ -246,7 +246,7 @@ exports[`native components basic 1`] = `
 
       export default class FooComponent extends Component {
       }
-
+  
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -257,7 +257,7 @@ foo
       @tagName(\\"\\")
       export default class FooComponent extends Component {
       }
-
+  
 ~~~~~~~~~~
 <div ...attributes>
   foo
@@ -334,7 +334,7 @@ exports[`native components handles \`@attributeBindings\` correctly 1`] = `
       @attributeBindings('foo', 'bar:baz')
       export default class FooComponent extends Component {
       }
-
+    
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -346,7 +346,7 @@ foo
       @tagName(\\"\\")
       export default class FooComponent extends Component {
       }
-
+    
 ~~~~~~~~~~
 <div foo={{this.foo}} baz={{this.bar}} ...attributes>
   foo
@@ -449,7 +449,7 @@ exports[`native components handles \`elementId\` correctly 1`] = `
       export default class FooComponent extends Component {
         elementId = 'qux';
       }
-
+    
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -459,7 +459,7 @@ foo
       import { tagName } from \\"@ember-decorators/component\\";
       @tagName(\\"\\")
       export default class FooComponent extends Component {}
-
+    
 ~~~~~~~~~~
 <div id=\\"qux\\" ...attributes>
   foo
@@ -557,7 +557,7 @@ exports[`native components replaces existing \`tagName\` 1`] = `
       @tagName('span')
       export default class FooComponent extends Component {
       }
-
+    
 ~~~~~~~~~~
 foo
 ~~~~~~~~~~
@@ -569,7 +569,7 @@ foo
       @tagName(\\"\\")
       export default class FooComponent extends Component {
       }
-
+    
 ~~~~~~~~~~
 <span ...attributes>
   foo
