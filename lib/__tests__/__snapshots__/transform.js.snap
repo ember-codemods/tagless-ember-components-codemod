@@ -354,6 +354,39 @@ foo
 =========="
 `;
 
+exports[`native components handles \`@className\` correctly 1`] = `
+"==========
+
+      import { className } from '@ember-decorators/component';
+
+      export default class FooComponent extends Component {
+        @className('b') a;
+        @className('y', 'z') x;
+        @className(undefined, 'bar') foo;
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+        a;
+        x;
+        foo;
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components handles \`@classNameBindings\` correctly 1`] = `
 "==========
 
