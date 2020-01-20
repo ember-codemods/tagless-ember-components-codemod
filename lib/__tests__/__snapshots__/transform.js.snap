@@ -23,6 +23,30 @@ foo
 =========="
 `;
 
+exports[`handles \`ariaRole\` correctly 1`] = `
+"==========
+
+    export default Component.extend({
+      ariaRole: 'button',
+    });
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    export default Component.extend({
+      tagName: \\"\\",
+    });
+  
+~~~~~~~~~~
+<div role=\\"button\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`handles \`attributeBindings\` correctly 1`] = `
 "==========
 
