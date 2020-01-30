@@ -547,6 +547,38 @@ foo
 =========="
 `;
 
+exports[`native components keeps unrelated decorators in place 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames, layout } from '@ember-decorators/component';
+
+      @layout(template)
+      @classNames('foo')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { layout, tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      @layout(template)
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components multi-line template 1`] = `
 "==========
 
