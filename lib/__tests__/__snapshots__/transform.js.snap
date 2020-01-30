@@ -161,7 +161,7 @@ foo
     });
   
 ~~~~~~~~~~
-<div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
+<div class=\\"{{this.styleNamespace}} foo bar:baz\\" ...attributes>
   foo
 </div>
 =========="
