@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic 1`] = `
+exports[`classic components basic 1`] = `
 "==========
 
     export default Component.extend({
@@ -23,7 +23,7 @@ foo
 =========="
 `;
 
-exports[`handles \`ariaRole\` correctly 1`] = `
+exports[`classic components handles \`ariaRole\` correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -47,7 +47,7 @@ foo
 =========="
 `;
 
-exports[`handles \`attributeBindings\` correctly 1`] = `
+exports[`classic components handles \`attributeBindings\` correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -71,7 +71,7 @@ foo
 =========="
 `;
 
-exports[`handles \`classNameBindings\` correctly 1`] = `
+exports[`classic components handles \`classNameBindings\` correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -95,7 +95,7 @@ foo
 =========="
 `;
 
-exports[`handles \`classNames\` correctly 1`] = `
+exports[`classic components handles \`classNames\` correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -119,7 +119,7 @@ foo
 =========="
 `;
 
-exports[`handles \`elementId\` correctly 1`] = `
+exports[`classic components handles \`elementId\` correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -143,7 +143,7 @@ foo
 =========="
 `;
 
-exports[`handles \`hasComponentCSS\` option correctly 1`] = `
+exports[`classic components handles \`hasComponentCSS\` option correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -167,7 +167,7 @@ foo
 =========="
 `;
 
-exports[`handles single \`classNames\` item correctly 1`] = `
+exports[`classic components handles single \`classNames\` item correctly 1`] = `
 "==========
 
     export default Component.extend({
@@ -191,7 +191,7 @@ foo
 =========="
 `;
 
-exports[`multi-line template 1`] = `
+exports[`classic components multi-line template 1`] = `
 "==========
 export default Component.extend({});
 ~~~~~~~~~~
@@ -217,7 +217,7 @@ export default Component.extend({
 =========="
 `;
 
-exports[`replaces existing \`tagName\` 1`] = `
+exports[`classic components replaces existing \`tagName\` 1`] = `
 "==========
 
     export default Component.extend({
@@ -234,6 +234,436 @@ foo
       tagName: \\"\\",
     });
   
+~~~~~~~~~~
+<span ...attributes>
+  foo
+</span>
+=========="
+`;
+
+exports[`native components basic 1`] = `
+"==========
+
+      import Component from '@ember/component';
+
+      export default class FooComponent extends Component {
+      }
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from \\"@ember-decorators/component\\";
+      import Component from '@ember/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+  
+~~~~~~~~~~
+<div ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@attribute\` and \`@attributeBindings\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { attribute, attributeBindings } from '@ember-decorators/component';
+
+      @attributeBindings('foo')
+      export default class FooComponent extends Component {
+        @attribute('baz') bar;
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+        bar;
+      }
+    
+~~~~~~~~~~
+<div foo={{this.foo}} baz={{this.bar}} ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@attribute\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { attribute } from '@ember-decorators/component';
+
+      export default class FooComponent extends Component {
+        @attribute foo;
+        @attribute('baz') bar;
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+        foo;
+        bar;
+      }
+    
+~~~~~~~~~~
+<div foo={{this.foo}} baz={{this.bar}} ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@attributeBindings\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { attributeBindings } from '@ember-decorators/component';
+
+      @attributeBindings('foo', 'bar:baz')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div foo={{this.foo}} baz={{this.bar}} ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@className\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { className } from '@ember-decorators/component';
+
+      export default class FooComponent extends Component {
+        @className('b') a;
+        @className('y', 'z') x;
+        @className(undefined, 'bar') foo;
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+        a;
+        x;
+        foo;
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@classNameBindings\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNameBindings } from '@ember-decorators/component';
+
+      @classNameBindings('a:b', 'x:y:z', 'foo::bar')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`@classNames\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo', 'bar:baz')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`elementId\` correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+
+      export default class FooComponent extends Component {
+        elementId = 'qux';
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from \\"@ember-decorators/component\\";
+      import Component from '@ember/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {}
+    
+~~~~~~~~~~
+<div id=\\"qux\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles \`hasComponentCSS\` option correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo', 'bar:baz')
+      export default class extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components handles single \`@classNames\` item correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames } from '@ember-decorators/component';
+
+      @classNames('foo')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components keeps unrelated decorators in place 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames, layout } from '@ember-decorators/component';
+
+      @layout(template)
+      @classNames('foo')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { layout, tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      @layout(template)
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<div class=\\"foo\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components multi-line template 1`] = `
+"==========
+
+      import Component from '@ember/component';
+
+      export default class extends Component {};
+    
+~~~~~~~~~~
+{{#if this.foo}}
+  FOO
+{{else}}
+  BAR
+{{/if}}
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from \\"@ember-decorators/component\\";
+      import Component from '@ember/component';
+
+      @tagName(\\"\\")
+      export default class extends Component {}
+    
+~~~~~~~~~~
+<div ...attributes>
+  {{#if this.foo}}
+    FOO
+  {{else}}
+    BAR
+  {{/if}}
+</div>
+=========="
+`;
+
+exports[`native components renamed import 1`] = `
+"==========
+
+      import Base from '@ember/component';
+
+      export default class FooComponent extends Base {
+      }
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from \\"@ember-decorators/component\\";
+      import Base from '@ember/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Base {
+      }
+  
+~~~~~~~~~~
+<div ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`native components replaces existing \`tagName\` 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName('span')
+      export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: span
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component {
+      }
+    
 ~~~~~~~~~~
 <span ...attributes>
   foo
