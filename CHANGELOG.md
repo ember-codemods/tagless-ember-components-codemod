@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.4.0 (2020-02-25)
+
+#### :boom: Breaking Change
+* [#48](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/48) Drop Node 8 support ([@Turbo87](https://github.com/Turbo87))
+
+#### :rocket: Enhancement
+* [#59](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/59) Improve whitespace formatting of template code ([@jelhan](https://github.com/jelhan))
+* [#44](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/44) Add support for native classes ([@simonihmig](https://github.com/simonihmig))
+* [#58](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/58) Add `this.` prefix to `styleNamespace` property ([@lifeart](https://github.com/lifeart))
+* [#50](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/50) Add support for passing paths or glob patterns as CLI options ([@jelhan](https://github.com/jelhan))
+* [#51](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/51) Add support for `ariaRole` property ([@jelhan](https://github.com/jelhan))
+
+#### :bug: Bug Fix
+* [#53](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/53) Fix empty package.json dependencies ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#43](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/43) Extract transforms and utils ([@simonihmig](https://github.com/simonihmig))
+
+#### Committers: 4
+- Alex Kanunnikov ([@lifeart](https://github.com/lifeart))
+- Jeldrik Hanschke ([@jelhan](https://github.com/jelhan))
+- Simon Ihmig ([@simonihmig](https://github.com/simonihmig))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.3.2 (2019-11-29)
 
 #### :bug: Bug Fix
