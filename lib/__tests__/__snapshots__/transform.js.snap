@@ -23,6 +23,28 @@ foo
 =========="
 `;
 
+exports[`classic components empty lines are not intended 1`] = `
+"==========
+export default Component.extend({});
+~~~~~~~~~~
+foo
+
+bar
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+export default Component.extend({
+  tagName: \\"\\"
+});
+~~~~~~~~~~
+<div ...attributes>
+  foo
+
+  bar
+</div>
+=========="
+`;
+
 exports[`classic components handles \`ariaRole\` correctly 1`] = `
 "==========
 
@@ -186,6 +208,26 @@ foo
   
 ~~~~~~~~~~
 <div class=\\"foo\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`classic components leading and trailing empty lines are stripped 1`] = `
+"==========
+export default Component.extend({});
+~~~~~~~~~~
+
+foo
+
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+export default Component.extend({
+  tagName: \\"\\"
+});
+~~~~~~~~~~
+<div ...attributes>
   foo
 </div>
 =========="
@@ -511,7 +553,7 @@ foo
       }
     
 ~~~~~~~~~~
-<div class=\\"{{styleNamespace}} foo bar:baz\\" ...attributes>
+<div class=\\"{{this.styleNamespace}} foo bar:baz\\" ...attributes>
   foo
 </div>
 =========="
