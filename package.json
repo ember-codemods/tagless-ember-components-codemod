@@ -17,7 +17,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
-    "ember-template-recast": "^4.1.0",
+    "ember-template-recast": "^4.1.1",
     "globby": "^11.0.0",
     "jscodeshift": "^0.7.0",
     "pkg-dir": "^4.2.0"
