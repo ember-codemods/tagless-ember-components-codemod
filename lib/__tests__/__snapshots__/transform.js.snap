@@ -97,7 +97,7 @@ exports[`classic components handles \`classNameBindings\` correctly 1`] = `
 "==========
 
     export default Component.extend({
-      classNameBindings: ['a:b', 'x:y:z', 'foo::bar'],
+      classNameBindings: ['a:b', 'x:y:z', 'foo::bar', ':static'],
     });
   
 ~~~~~~~~~~
@@ -111,7 +111,7 @@ foo
     });
   
 ~~~~~~~~~~
-<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}} static\\" ...attributes>
   foo
 </div>
 =========="
@@ -447,7 +447,7 @@ exports[`native components handles \`@classNameBindings\` correctly 1`] = `
       import Component from '@ember/component';
       import { classNameBindings } from '@ember-decorators/component';
 
-      @classNameBindings('a:b', 'x:y:z', 'foo::bar')
+      @classNameBindings('a:b', 'x:y:z', 'foo::bar', ':static')
       export default class FooComponent extends Component {
       }
     
@@ -465,7 +465,7 @@ foo
       }
     
 ~~~~~~~~~~
-<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}}\\" ...attributes>
+<div class=\\"{{if this.a \\"b\\"}} {{if this.x \\"y\\" \\"z\\"}} {{unless this.foo \\"bar\\"}} static\\" ...attributes>
   foo
 </div>
 =========="
