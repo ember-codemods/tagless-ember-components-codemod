@@ -559,6 +559,38 @@ foo
 =========="
 `;
 
+exports[`native components handles TypeScript components correctly 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { classNames } from '@ember-decorators/component';
+
+      @classNameBindings('foo:bar')
+      export default class extends Component {
+        foo: boolean = true;
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { classNames, tagName } from '@ember-decorators/component';
+
+      @tagName(\\"\\")
+      export default class extends Component {
+        foo: boolean = true;
+      }
+    
+~~~~~~~~~~
+<div class={{if this.foo \\"bar\\"}} ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components handles single \`@classNames\` item correctly 1`] = `
 "==========
 
