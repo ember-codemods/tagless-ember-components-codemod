@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.5.0 (2020-04-19)
+
+#### :rocket: Enhancement
+* [#68](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/68) Detect and use collocated templates ([@jrjohnson](https://github.com/jrjohnson))
+* [#66](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/66) Support TypeScript components ([@simonihmig](https://github.com/simonihmig))
+* [#69](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/69) Handle static class name bindings ([@jrjohnson](https://github.com/jrjohnson))
+
+#### :bug: Bug Fix
+* [#65](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/65) Skip tagName='' tagless components ([@simonihmig](https://github.com/simonihmig))
+
+#### Committers: 2
+- Jonathan Johnson ([@jrjohnson](https://github.com/jrjohnson))
+- Simon Ihmig ([@simonihmig](https://github.com/simonihmig))
+
+
 ## v0.4.0 (2020-02-25)
 
 #### :boom: Breaking Change
