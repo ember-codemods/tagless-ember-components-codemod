@@ -20,7 +20,7 @@
     "ember-template-recast": "^4.2.1",
     "globby": "^11.0.2",
     "jscodeshift": "^0.8.0",
-    "pkg-dir": "^4.2.0"
+    "pkg-dir": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
