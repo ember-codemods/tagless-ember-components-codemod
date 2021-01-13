@@ -501,6 +501,30 @@ foo
 =========="
 `;
 
+exports[`native components handles \`ariaRole\` correctly 1`] = `
+"==========
+
+    export default class FooComponent extends Component {
+      ariaRole = 'button';
+    }
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    import { tagName } from \\"@ember-decorators/component\\";
+    @tagName(\\"\\")
+    export default class FooComponent extends Component {}
+  
+~~~~~~~~~~
+<div role=\\"button\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components handles \`elementId\` correctly 1`] = `
 "==========
 
