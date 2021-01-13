@@ -141,6 +141,57 @@ foo
 =========="
 `;
 
+exports[`classic components handles \`data-test-*\` boolean correctly 1`] = `
+"==========
+
+    export default Component.extend({
+      'data-test-one': true,
+      'data-test-two': true,
+      'data-test-three': false,
+    });
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    export default Component.extend({
+      tagName: \\"\\"
+    });
+  
+~~~~~~~~~~
+<div data-test-one data-test-two ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`classic components handles \`data-test-*\` literals correctly 1`] = `
+"==========
+
+    export default Component.extend({
+      'data-test-item': 1,
+      'data-test-name': 'Zoey',
+    });
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    export default Component.extend({
+      tagName: \\"\\"
+    });
+  
+~~~~~~~~~~
+<div data-test-item=\\"1\\" data-test-name=\\"Zoey\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`classic components handles \`elementId\` correctly 1`] = `
 "==========
 
@@ -184,6 +235,33 @@ foo
   
 ~~~~~~~~~~
 <div class=\\"{{this.styleNamespace}} foo bar:baz\\" ...attributes>
+  foo
+</div>
+=========="
+`;
+
+exports[`classic components handles \`hasTestSelectors\` option correctly 1`] = `
+"==========
+
+    export default Component.extend({
+      'data-test-item': 1,
+      'data-test-name': 'Zoey',
+    });
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+    export default Component.extend({
+      tagName: \\"\\",
+      'data-test-item': 1,
+      'data-test-name': 'Zoey'
+    });
+  
+~~~~~~~~~~
+<div ...attributes>
   foo
 </div>
 =========="
