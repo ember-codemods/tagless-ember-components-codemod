@@ -3,13 +3,13 @@ name: CI
 on:
   push:
     branches:
+      - main
       - master
-      - 'v*' # older version branches
-    tags:
-      - '*'
-  pull_request:
-  schedule:
-    - cron:  '0 3 * * *' # daily at 3am
+  pull_request: {}
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -19,13 +19,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 13.x]
+        node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
