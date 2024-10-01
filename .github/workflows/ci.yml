@@ -23,19 +23,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
+    - uses: pnpm/action-setup@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-
-    - name: install
-      run: yarn install
-
-    - name: lint
-      run: yarn lint
-
-    - name: test
-      run: yarn test
-      env:
-        CI: true
+        cache: pnpm
+    - run: pnpm install --frozen-lockfile
+    - run: pnpm run lint
+    - run: pnpm run test
