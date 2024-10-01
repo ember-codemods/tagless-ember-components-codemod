@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2024-10-01)
+
+tagless-ember-components-codemod 1.0.0 (major)
+
+#### :boom: Breaking Change
+* `tagless-ember-components-codemod`
+  * [#196](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/196) drop support for node < 18 ([@mansona](https://github.com/mansona))
+
+#### :rocket: Enhancement
+* `tagless-ember-components-codemod`
+  * [#198](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/198) add basic support for mixins on native classes ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `tagless-ember-components-codemod`
+  * [#199](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/199) start using release-plan ([@mansona](https://github.com/mansona))
+  * [#197](https://github.com/ember-codemods/tagless-ember-components-codemod/pull/197) swap to pnpm ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## v0.5.0 (2020-04-19)
 
 #### :rocket: Enhancement
