@@ -311,6 +311,36 @@ foo
 =========="
 `;
 
+exports[`native components basic mixins 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import SuperMixin from 'some-place';
+
+      export default class FooComponent extends Component.extends(SuperMixin) {
+      }
+  
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: div
+~~~~~~~~~~
+
+      import { tagName } from \\"@ember-decorators/component\\";
+      import Component from '@ember/component';
+      import SuperMixin from 'some-place';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component.extends(SuperMixin) {
+      }
+  
+~~~~~~~~~~
+<div ...attributes>
+  foo
+</div>
+=========="
+`;
+
 exports[`native components handles \`@attribute\` and \`@attributeBindings\` correctly 1`] = `
 "==========
 
@@ -736,6 +766,38 @@ foo
 
       @tagName(\\"\\")
       export default class FooComponent extends Component {
+      }
+    
+~~~~~~~~~~
+<span ...attributes>
+  foo
+</span>
+=========="
+`;
+
+exports[`native components replaces existing \`tagName\` on a mixin class 1`] = `
+"==========
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+      import SomeMixin from 'somewhere';
+
+      @tagName('span')
+      export default class FooComponent extends Component.extends(SomeMixin) {
+      }
+    
+~~~~~~~~~~
+foo
+~~~~~~~~~~
+ => tagName: span
+~~~~~~~~~~
+
+      import Component from '@ember/component';
+      import { tagName } from '@ember-decorators/component';
+      import SomeMixin from 'somewhere';
+
+      @tagName(\\"\\")
+      export default class FooComponent extends Component.extends(SomeMixin) {
       }
     
 ~~~~~~~~~~
